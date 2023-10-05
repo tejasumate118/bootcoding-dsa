@@ -69,18 +69,17 @@ public class InsertingElements {
         }
         return arr;
     }
-    public static boolean update(){
-        Scanner sc =  new Scanner(System.in);
-        System.out.println("Do you want to update array? (true or false)");
-        boolean update=sc.nextBoolean();
-        return update;
 
-    }
+
     public static void cases(int[] arr){
         Scanner sc= new Scanner(System.in);
+        System.out.println();
+        System.out.println("Do you want to update array? (true or false)");
+        boolean update=sc.nextBoolean();
 
 
-        if(update()){
+
+        if(update){
             System.out.println("What operation do you want to perform?");
             System.out.println("Available Operations are:");
             System.out.println("1: Insert at Start of an array.");
@@ -119,9 +118,10 @@ public class InsertingElements {
                     System.out.println("Enter a valid input.");
 
             }
-            if(update())cases(arr);
+            cases(arr);
 
-    }
+
+    }else return;
 
 
 
