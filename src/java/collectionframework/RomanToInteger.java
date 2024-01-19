@@ -13,7 +13,7 @@ public class RomanToInteger {
         RomanValueMap obj=new RomanValueMap();
         int result=obj.calValue(orginal);;
         System.out.println(result);
-
+        System.out.println();
 
 
     }
@@ -59,6 +59,7 @@ public class RomanToInteger {
                 }}
             result+=getValue(s.charAt(s.length()-1));
             return result;
+
         }}}
 
 
