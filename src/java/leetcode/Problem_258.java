@@ -26,16 +26,16 @@ public class Problem_258 {
 
     }
     public static int addDigits(int num) {
-        return recurse(num);
+        return sum(num);
     }
-    public static int recurse(int num){
+    public static int sum(int num){
         int result=0;
         while(num!=0){
             result+=num%10;
             num=num/10;
         }
         if(result>=10){
-            result=recurse(result);
+            result=sum(result);
         }
         return result;
 
