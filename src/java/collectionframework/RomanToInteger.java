@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class RomanToInteger {
     public static void main(String[] args) {
-        String orginal;
+        String original;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Roman Value");
-        orginal = sc.nextLine();
+        original = sc.nextLine();
         RomanValueMap obj=new RomanValueMap();
-        int result=obj.calValue(orginal);;
+        int result=obj.calValue(original);;
         System.out.println(result);
         System.out.println();
 
@@ -36,10 +36,7 @@ public class RomanToInteger {
             value_map.put('C', 100);
             value_map.put('D', 500);
             value_map.put('M', 1000);
-            if (value_map.containsKey(Roman)) {
-                return value_map.get(Roman);
-            } else
-                return 0;
+            return value_map.getOrDefault(Roman, 0);
 
         }
 
@@ -49,7 +46,7 @@ public class RomanToInteger {
             int i=0;
             while(i<s.length()-1)
             {
-                if(s.charAt(i)<s.charAt(i+1)){
+                if(getValue(s.charAt(i))<getValue(s.charAt(i+1))){
                     result-=getValue(s.charAt(i));
                     i++;
                 }
@@ -60,7 +57,9 @@ public class RomanToInteger {
             result+=getValue(s.charAt(s.length()-1));
             return result;
 
-        }}}
+        }
+    }
+}
 
 
 
