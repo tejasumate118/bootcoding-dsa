@@ -6,6 +6,7 @@ public class Problem_125 {
     public static void main(String[] args) {
         String s = "Marge, let's \"[went].\" I await {news} telegram.";
         System.out.println(isPalindrome(s));
+        System.out.println();
 
     }
     public static boolean isPalindrome(String s) {
