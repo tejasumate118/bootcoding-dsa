@@ -3,7 +3,8 @@ class Solution {
         int maxDepth = 0;
         int currentDepth = 0;
         
-        for (char c : s.toCharArray()) {
+        for (int i=0;i<s.length();i++) {
+            char c=s.charAt(i);
             if (c == '(') {
                 currentDepth++;
                 maxDepth = Math.max(maxDepth, currentDepth);
