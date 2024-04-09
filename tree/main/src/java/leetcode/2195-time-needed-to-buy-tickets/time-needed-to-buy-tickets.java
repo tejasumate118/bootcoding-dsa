@@ -1,6 +1,6 @@
 class Solution {
     public int timeRequiredToBuy(int[] tickets, int k) {
-        //O(K*N)
+        //O(N)
         int time=0;
         int n=tickets.length;
         for(int i=0;i<n;i++){
