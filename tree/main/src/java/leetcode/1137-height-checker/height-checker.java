@@ -1,14 +1,29 @@
 class Solution {
     public int heightChecker(int[] heights) {
-        int[] expected=heights.clone();
-        Arrays.sort(expected);
-        int OutofOrder=0;
+        int[] bucket=createBucket(heights);
+        int outOfOrder=0;
+        int nextInHeight=0;
+
         for(int i=0; i<heights.length; i++){
-            if(heights[i]!=expected[i]){
-                OutofOrder++;
-            }
+            nextInHeight=nextHeight(nextInHeight,bucket);
+            if(heights[i]!=nextInHeight) outOfOrder++;
+
+            bucket[nextInHeight]--;
         }
-        return OutofOrder;
+        return outOfOrder;
+        
+    }
+
+    private int nextHeight(int currentHeight,int arr[]){
+        while(arr[currentHeight]==0)
+            currentHeight++; 
+        return currentHeight;
+    }
+    private int[] createBucket(int arr[]){
+        int[] bucket=new int[101];
+        for(int num:arr) bucket[num]++;
+        
+        return bucket;
 
     }
 }
