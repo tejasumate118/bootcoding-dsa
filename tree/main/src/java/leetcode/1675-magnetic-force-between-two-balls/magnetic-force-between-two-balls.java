@@ -1,7 +1,7 @@
 class Solution {
     public int maxDistance(int[] position, int m) {
         Arrays.sort(position);
-        int l = 0; //Can also be 1 cause each ball is placed in unique buckets.
+        int l = 1; //Can also be 1 cause each ball is placed in unique buckets.
         int r= position[position.length-1];
         int ans = -1;
         while(l<=r){
