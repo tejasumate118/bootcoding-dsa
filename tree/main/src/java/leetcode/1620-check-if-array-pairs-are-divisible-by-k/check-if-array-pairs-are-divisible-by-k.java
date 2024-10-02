@@ -10,6 +10,7 @@ class Solution {
         for(int i=1; i<=freq.length/2 ; i++){
             if(freq[i]!=freq[k-i]) return false;
         }
+        System.gc();
         return true;
     }
 }
