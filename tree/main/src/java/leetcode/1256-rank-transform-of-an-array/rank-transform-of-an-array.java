@@ -9,6 +9,7 @@ class Solution {
         for(int i=0;i<arr.length;i++){
             arr[i]= rankMap.get(arr[i]);
         }
+        System.gc();
         return arr;
     }
 }
