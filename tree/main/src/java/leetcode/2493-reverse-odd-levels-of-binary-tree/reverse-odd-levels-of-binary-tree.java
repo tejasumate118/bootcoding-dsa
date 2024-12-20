@@ -13,6 +13,7 @@
  *     }
  * }
  */
+ /*
 class Solution {
     public TreeNode reverseOddLevels(TreeNode root) {
         int lvl =0;
@@ -39,10 +40,26 @@ class Solution {
                 }
             }
             lvl++;
-            
-
-
         }
         return root;
+    }
+}
+*/
+class Solution {
+    public TreeNode reverseOddLevels(TreeNode root) {
+        dfs(root.left,root.right,1);
+        return root;
+    }
+    private void dfs(TreeNode left, TreeNode right , int lvl){
+        if(left==null & right ==null) return;
+        //swap
+        if(lvl%2==1){
+            int temp = left.val;
+            left.val = right.val;
+            right.val = temp;
+        }
+        
+        dfs (left.left,right.right,lvl+1);
+        dfs(left.right,right.left,lvl+1);
     }
 }
