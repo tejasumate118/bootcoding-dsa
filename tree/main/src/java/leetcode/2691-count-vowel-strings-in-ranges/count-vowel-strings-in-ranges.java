@@ -4,12 +4,13 @@ class Solution {
         int n = words.length;
         int memo[] = new int[n];
         int prefixsum=0;
+        String vowels = "aeiou";
         for (int i=0; i<n ; i++){
             
             char start = words[i].charAt(0) ;
             char end =words[i].charAt(words[i].length()-1);
-            if(start == 'a' || start == 'e' || start == 'i' || start=='o' || start== 'u'){
-                if(end == 'a' || end == 'e' || end == 'i' || end=='o' || end== 'u')
+            if(vowels.indexOf(start)!=-1){
+                if(vowels.indexOf(end)!=-1)
                    ++prefixsum;
             }
             memo[i]=prefixsum;
