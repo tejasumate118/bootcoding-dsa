@@ -13,7 +13,7 @@ class Solution {
         cnt1=0;
         for(int i=0;i<boxes.length();i++){
             prefixsum += cnt1;
-            minops[i]= minops[i] + prefixsum;
+            minops[i] += prefixsum;
             cnt1= boxes.charAt(i)=='1'? cnt1+1:cnt1;
 
         }
