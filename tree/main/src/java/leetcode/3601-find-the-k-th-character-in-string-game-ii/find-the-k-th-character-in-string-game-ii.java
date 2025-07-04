@@ -14,19 +14,11 @@ class Solution {
             // if operation[jump-1] is 0 then the character is same thus no need to perform operation
             if(operations[jump-1]==1) opsCount++;
         }
-        char result = 'a';
         //only have 26 letters in alphabet so round it up by modulo 26
-        opsCount = opsCount%26;
-        while(opsCount-->0){
-            result = nextChar(result);
-        }
-        return result;
+        return (char)('a'+opsCount%26);
 
         
     }
 
-    private char nextChar(char ch){
-        //nxt character calculation
-        return (char)('a'+(ch-'a'+1)%26);
-    }
+   
 }
