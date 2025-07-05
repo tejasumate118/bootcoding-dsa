@@ -1,6 +1,7 @@
 class Solution {
     public int findLucky(int[] arr) {
 
+
     /*
         // First Solution
         HashMap<Integer, Integer> freq = new HashMap<>();
@@ -24,10 +25,11 @@ class Solution {
 
     int[] freq = new int[501];
     for(int ele : arr) freq[ele]++;
-    int largestLucky = -1;
-    for(int i = 1; i<501;i++) largestLucky = (freq[i]==i)&&(largestLucky<i)?i:largestLucky;
+    for(int i = 500; i>0;i--){
+        if(freq[i]==i) return i;
+    }
         
     
-    return largestLucky;   
+    return -1;   
     }
 }
